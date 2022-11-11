@@ -8,7 +8,7 @@ let count = 0;
 btns.forEach((btn)=>{
 
     btn.addEventListener('click',function(e){
-        let text = btn.textContent.toLocaleLowerCase();
+        // let text = btn.textContent.toLocaleLowerCase();
         const styles = e.currentTarget.classList
         if(styles.contains('decrease')){
             count--;
@@ -18,6 +18,15 @@ btns.forEach((btn)=>{
             count=0;
         }
 
+        if(count >0){
+            value.style.color = 'green'
+        }
+        if(count <0){
+            value.style.color = 'red'
+        }
+        if(count ===0){
+            value.style.color = 'black'
+        }
         value.textContent = count;
     })
 })
